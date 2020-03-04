@@ -1,12 +1,19 @@
 import os
+import logging as lg
+
+lg.basicConfig(level=lg.DEBUG)
 
 
 def lauch_analysis(data_file):
     directory = os.path.dirname(os.path.dirname(__file__))
     path_to_file = os.path.join(directory, "data/compteRendu", data_file)
-    with open(path_to_file, 'r') as file:
-        preview = file.readline()
-    print("It works !\n {}".format(preview))
+
+    try:
+        with open(path_to_file, 'r') as file:
+            preview = file.readline()
+            lg.debug("It works !\n {}".format(preview))
+    except FileNotFoundError as e:
+        lg.critical("File note found :( : {}".format(e))
 
 
 def main():

@@ -15,6 +15,8 @@ def parse_arguments():
 
 def main():
     args = parse_arguments()
+    # import pdb
+    # pdb.set_trace()
     if args.extension == 'csv':
         c_an.lauch_analysis('current_mps.csv')
     elif args.extension == 'xml':
