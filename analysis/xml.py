@@ -3,7 +3,7 @@ import os
 
 def lauch_analysis(data_file):
     directory = os.path.dirname(os.path.dirname(__file__))
-    path_to_file = os.path.join(directory, "../data/compteRendu", data_file)
+    path_to_file = os.path.join(directory, "data/compteRendu", data_file)
     with open(path_to_file, 'r') as file:
         preview = file.readline()
     print("It works !\n {}".format(preview))
